@@ -84,8 +84,7 @@ class SpaceItemDecoration : RecyclerView.ItemDecoration {
         0,
         includeEdge,
         layoutManager
-    ) {
-    }
+    )
 
     /**
      * GridLayoutManager or StaggeredGridLayoutManager spacing
