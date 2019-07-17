@@ -122,7 +122,7 @@ class PullLoadHeadFootGridRecyclerView : LinearLayout, SwipeRefreshLayout.OnRefr
         mRecyclerView.layoutManager = staggeredGridLayoutManager
     }
 
-    fun setAdapter(adapter: RecyclerView.Adapter<*>) {
+    fun setAdapter(adapter: RecyclerView.Adapter<RecyclerView.ViewHolder>) {
         mAdapter = HeaderViewGridRecyclerAdapter(adapter)
         mRecyclerView.adapter = mAdapter
         loadMoreView = LayoutInflater.from(mContext).inflate(R.layout.layout_load_more, mRecyclerView, false)
