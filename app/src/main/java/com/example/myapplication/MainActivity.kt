@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         mFindLaunchRv.addHeadView(mHeaderView)
 
-        mFindLaunchRv.setOnPullLoadMoreListener(object : PullLoadHeadFootGridRecyclerView.PullLoadMoreListener {
+        mFindLaunchRv.setOnPullLoadMoreListener(object :
+            PullLoadHeadFootGridRecyclerView.PullLoadMoreListener {
             override fun onRefresh() {
                 mPage = 1
                 postFind()
@@ -56,14 +57,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun postFind() {
-        Thread(Runnable {
+        Thread {
             try {
                 //模拟网络请求 加载数据
                 Thread.sleep(500)
                 var data = ArrayList<String>()
                 if (mPage <= 5) { //5页后没有数据
                     for (i in 0..19) {
-                        when{
+                        when {
                             i % 5 == 0 -> data.add("敏敏我爱你 雷宝宝")
                             i % 5 == 1 -> data.add("除了今生，如果还有来世，我一定要和你再续前缘，我要一直爱着你 护着你 想着你")
                             i % 5 == 2 -> data.add("除了今生，如果还有来世，我一定要和你再续前缘，我要一直爱着你 抱着你 护着你 佛说：五百年的回眸，才换来今生的一次擦肩而过")
@@ -102,7 +103,7 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
-        }).start()
+        }.start()
 
 
     }
